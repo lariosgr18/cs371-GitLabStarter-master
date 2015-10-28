@@ -31,7 +31,7 @@ public class TextModActivity extends ActionBarActivity {
     private EditText edit;
     private EditText editText; //the view that shows the edittext
     //instance variable containing text
-    private EditText text ;
+    private EditText text;
     private Spinner spinner;
 
     /**
@@ -46,13 +46,13 @@ public class TextModActivity extends ActionBarActivity {
 
         edit = (EditText) findViewById(R.id.editText);
         // set instance variables for our widgets
-        imageView = (ImageView)findViewById(R.id.imageView);
-        editText = (EditText)findViewById(R.id.editText);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        editText = (EditText) findViewById(R.id.editText);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //fdgdgd
         // get spinner object
-        spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -62,7 +62,7 @@ public class TextModActivity extends ActionBarActivity {
         // bind the spinner and adapter
         spinner.setAdapter(adapter);
         //gets edittext
-        text = (EditText)findViewById(R.id.editText);
+        text = (EditText) findViewById(R.id.editText);
 
         // load the images from the resources
         //
@@ -73,8 +73,8 @@ public class TextModActivity extends ActionBarActivity {
         // loop through, adding one image per string
         for (int i = 0; i < spinnerNames.length; i++) {
             // determine the index; use 0 if out of bounds
-            int id = imageIds2.getResourceId(i,0);
-            if (id == 0) id = imageIds2.getResourceId(0,0);
+            int id = imageIds2.getResourceId(i, 0);
+            if (id == 0) id = imageIds2.getResourceId(0, 0);
             // load the image; add to arraylist
             Bitmap img = BitmapFactory.decodeResource(getResources(), id);
             images.add(img);
@@ -115,18 +115,15 @@ public class TextModActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clear(View view)
-    {
+    public void clear(View view) {
         edit.setText("");
     }
 
-    public void upper(View view)
-    {
+    public void upper(View view) {
         edit.setText(edit.getText().toString().toUpperCase());
     }
 
-    public void lower(View view)
-    {
+    public void lower(View view) {
         edit.setText(edit.getText().toString().toLowerCase());
     }
 
@@ -138,7 +135,7 @@ public class TextModActivity extends ActionBarActivity {
 
         /**
          * @see android.widget.AdapterView.OnItemSelectedListener#onItemSelected(
-         *                  android.widget.AdapterView, android.view.View, int, long)
+         *android.widget.AdapterView, android.view.View, int, long)
          */
         @Override
         public void onItemSelected(AdapterView<?> parentView, View selectedItemView,
@@ -149,7 +146,7 @@ public class TextModActivity extends ActionBarActivity {
 
         /**
          * @see android.widget.AdapterView.OnItemSelectedListener#onNothingSelected(
-         *                  android.widget.AdapterView)
+         *android.widget.AdapterView)
          */
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
@@ -157,13 +154,34 @@ public class TextModActivity extends ActionBarActivity {
         }
     }
 
-    public void copy(View v){
+    public void copy(View v) {
 
         text.setText(text.getText() + spinner.getSelectedItem().toString());
     }
 
-    public void reverse(View view){
+    public void reverse(View view) {
         StringBuffer a = new StringBuffer(editText.getText());
         editText.setText(a.reverse());
+    }
+
+    public void alternate(View v) {
+        String oldString = editText.getText().toString().toLowerCase();
+        String newString = "";
+        boolean nextCapital = true;
+        for (int i = 0; i < oldString.length(); i++) {
+            char currentChar = oldString.charAt(i);
+            if (Character.isLetter(currentChar)) {
+                if (nextCapital) {
+                    newString += Character.toUpperCase(currentChar);
+                    nextCapital = false;
+                } else {
+                    newString += Character.toLowerCase(currentChar);
+                    nextCapital = true;
+                }
+            } else {
+                newString += currentChar;
+            }
+            editText.setText(newString);
+        }
     }
 }
