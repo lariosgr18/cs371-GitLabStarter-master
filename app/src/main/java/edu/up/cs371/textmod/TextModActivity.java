@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+    private EditText edit;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -38,6 +40,7 @@ public class TextModActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
 
+        edit = (EditText) findViewById(R.id.editText);
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
 
@@ -102,6 +105,22 @@ public class TextModActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void clear(View view)
+    {
+        edit.setText("");
+    }
+
+    public void upper(View view)
+    {
+        edit.setText(edit.getText().toString().toUpperCase());
+    }
+
+    public void lower(View view)
+    {
+        edit.setText(edit.getText().toString().toLowerCase());
+    }
+
 
     /**
      * class that handles our spinner's selection events
