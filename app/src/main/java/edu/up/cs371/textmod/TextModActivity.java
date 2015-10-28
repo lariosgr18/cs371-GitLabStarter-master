@@ -29,10 +29,11 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
     private EditText edit;
+    private EditText editText; //the view that shows the edittext
     //instance variable containing text
     private EditText text ;
     private Spinner spinner;
-
+    //hello
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -46,6 +47,7 @@ public class TextModActivity extends ActionBarActivity {
         edit = (EditText) findViewById(R.id.editText);
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
+        editText = (EditText)findViewById(R.id.editText);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -76,6 +78,8 @@ public class TextModActivity extends ActionBarActivity {
             // load the image; add to arraylist
             Bitmap img = BitmapFactory.decodeResource(getResources(), id);
             images.add(img);
+
+
         }
 
         // define a listener for the spinner
@@ -156,5 +160,10 @@ public class TextModActivity extends ActionBarActivity {
     public void copy(View v){
 
         text.setText(text.getText() + spinner.getSelectedItem().toString());
+    }
+
+    public void reverse(View view){
+        StringBuffer a = new StringBuffer(editText.getText());
+        editText.setText(a.reverse());
     }
 }

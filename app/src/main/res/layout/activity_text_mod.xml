@@ -115,7 +115,8 @@
             android:id="@+id/button4"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:onClick="reverse"/>
 
         <Space
             android:layout_width="0sp"
