@@ -169,6 +169,7 @@ public class TextModActivity extends ActionBarActivity {
     public void reverse(View view){
         StringBuffer a = new StringBuffer(editText.getText());
         editText.setText(a.reverse());
+        //comment
     }
 
     public void remove(View v){
