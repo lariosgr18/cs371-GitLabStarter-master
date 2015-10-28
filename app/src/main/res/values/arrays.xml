@@ -9,12 +9,14 @@
         <item>@mipmap/kitten</item>
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
+        <item>@mipmap/whiteguy</item>
     </array>
 
     <string-array name="spinner_names">
         <item>Sleeping Kitten</item>
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
+        <item>WHITE GUY</item>
     </string-array>
 
 </resources>
