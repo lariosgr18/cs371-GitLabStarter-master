@@ -33,8 +33,7 @@ public class TextModActivity extends ActionBarActivity {
     //instance variable containing text
     private EditText text ;
     private Spinner spinner;
-    //hello world
-    //new comment
+
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
