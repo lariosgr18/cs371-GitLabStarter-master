@@ -10,6 +10,7 @@
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/aziz</item>
+        <item>@mipmap/latinoguy</item>
         <item>@mipmap/whiteguy</item>
     </array>
 
@@ -19,6 +20,7 @@
         <item>Dr. Steven Vegdahl</item>
         <item>Abhinav Mulagda</item>
         <item>WHITE GUY</item>
+        <item>Latino Guy</item>
     </string-array>
 
 </resources>

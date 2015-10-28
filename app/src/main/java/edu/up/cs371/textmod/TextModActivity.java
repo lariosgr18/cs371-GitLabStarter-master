@@ -50,7 +50,7 @@ public class TextModActivity extends ActionBarActivity {
         editText = (EditText)findViewById(R.id.editText);
 
         // Set up the spinner so that it shows the names in the spinner array resources
-        //
+        //fdgdgdgdgdg
         // get spinner object
         spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
