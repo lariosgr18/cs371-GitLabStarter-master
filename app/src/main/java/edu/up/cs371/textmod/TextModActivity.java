@@ -29,6 +29,9 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
     private EditText edit;
+    //instance variable containing text
+    private EditText text ;
+    private Spinner spinner;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -47,7 +50,7 @@ public class TextModActivity extends ActionBarActivity {
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -56,6 +59,8 @@ public class TextModActivity extends ActionBarActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // bind the spinner and adapter
         spinner.setAdapter(adapter);
+        //gets edittext
+        text = (EditText)findViewById(R.id.editText);
 
         // load the images from the resources
         //
@@ -146,5 +151,10 @@ public class TextModActivity extends ActionBarActivity {
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
         }
+    }
+
+    public void copy(View v){
+
+        text.setText(text.getText() + spinner.getSelectedItem().toString());
     }
 }
