@@ -169,6 +169,15 @@ public class TextModActivity extends ActionBarActivity {
     public void reverse(View view){
         StringBuffer a = new StringBuffer(editText.getText());
         editText.setText(a.reverse());
+
+
+    }
+
+    public void deleteSpace(View view)
+    {
+        String remove = edit.getText().toString();
+        remove = remove.replaceAll(" ","");
+        edit.setText(remove);
         //comment
     }
 
