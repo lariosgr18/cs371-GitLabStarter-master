@@ -34,7 +34,6 @@ public class TextModActivity extends ActionBarActivity {
     //instance variable containing text
     private EditText text;
     private Spinner spinner;
-    //hello
     private Button remove;
 
     /**
